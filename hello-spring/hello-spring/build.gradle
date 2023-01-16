@@ -6,9 +6,9 @@ plugins {
 
 group = 'hyunsb'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '11' // 자바 버전
 
-repositories {
+repositories { // Dependencies의 패키지를 다운 받을 주소 (특정 주소를 기입할 수 있음)
 	mavenCentral()
 }
 
