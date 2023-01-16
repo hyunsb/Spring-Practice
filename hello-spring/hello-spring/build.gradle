@@ -1,3 +1,28 @@
+/**
+ * Gradle: 오픈소스 빌드 자동화 툴
+ *
+ * 1. High performance
+ * Gradle은 실행시켜야 하는 task만 실행시키고 다른 불필요한 동작은 하지 않는다.
+ * 또, build cache를 사용함으로써 이전 실행의 task output을 재사용할 수 있다.
+ * 심지어 서로 다른 기계에서도 build cache를 공유하여 성능을 높일 수 있다.
+ *
+ * 2. JVM foundation
+ * Gradle은 JVM에서 실행되고, JVM을 사용하려면 JDK를 설치해야 한다.
+ * 따라서 Java Standard API를 빌드 로직에 사용할 수 있다.
+ * 또한 Gradle을 다양한 플랫폼에서 실핼할 수 있다.
+ *
+ * 3. Conventions
+ * Gradle은 Maven으로부터 의존 라이브러리 관리 기능을 차용했다.
+ * 따라서 컨벤션을 따라 Java 프로젝트와 같은 일반적인 유형의 프로젝트를 쉽게 빌드할 수 있다.
+ * 그리고 필요하다면 컨벤션을 오버라이딩하거나 task를 추가하면서 컨벤션 기반의 빌드를 커스터마이징 할 수 있다.
+ *
+ * 4. Extensibility
+ * Gradle을 확장하면 고유의 task 타입을 제공하거나 모델을 빌드할 수 있다.
+ *
+ * 5. IDE, Build Scan support
+ * Android Studio, IntelliJ IDEA, Eclipse 등의 IDE에서 Gradle을 임포트하여 사용할 수 있다.
+ * 그리고 빌드를 모니터링할 수 있는 Build Scan을 지원한다.
+ * */
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.7'
