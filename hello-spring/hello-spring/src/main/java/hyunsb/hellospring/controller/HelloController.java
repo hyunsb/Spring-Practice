@@ -19,8 +19,9 @@ public class HelloController {
     }
 
     //@RequestParam("가져올 데이터의 이름") [데이터 타입], [변수명]
+    //Ctrl + P : 파라매터 정보
     @GetMapping("hello-mvc")
-    public String helloMvc(@RequestParam("name") String name, Model model){
+    public String helloMvc(@RequestParam(value = "name") String name, Model model){
         model.addAttribute("name", name);
         return "hello-template";
     }
