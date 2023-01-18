@@ -13,7 +13,12 @@ class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
-    // 테스트가 종료될 때마다 실행
+    // 테스트는 서로 의존관계가 성립하면 안된다.
+    // 고로 해당 테스트는 서로 다른 저장소를 생성하여 테스트를 진행하는 방법
+    // 혹은 각 테스트가 종료될 때마다 공용으로 사용하는 저장소를 초기화 시켜주는 방법을 통해
+    // 서로 의존관계가 성립하지 않게 해주어야 한다.
+
+    // 각 메서드가 종료될 때마다 실행
     @AfterEach
     public void afterEach(){
         repository.clearStore();
