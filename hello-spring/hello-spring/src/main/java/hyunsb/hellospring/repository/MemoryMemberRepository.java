@@ -5,14 +5,14 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
 
     // 회원을 저장소에 저장
-    @Override
+    //@Override
     public Member save(Member member) {
         member.setId(++sequence);
         store.put(member.getId(), member);

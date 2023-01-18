@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 // 스프링 컨테이너에 등록
-@Service
+//@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    @Autowired
+//    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
