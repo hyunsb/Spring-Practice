@@ -27,6 +27,8 @@ public class HelloController {
         return "hello-template";
     }
 
+
+    // 해당 웹페이지의 소스를 확인해보면 hmtl코드 없이 문자열만 존재하는 것을 확인할 수 있음
     @GetMapping("hello-string")
     @ResponseBody // http의 header, <body>부에 해당 내용을 직접 넣어 주겠다는 뜻
     public String helloString(@RequestParam("name") String name){
