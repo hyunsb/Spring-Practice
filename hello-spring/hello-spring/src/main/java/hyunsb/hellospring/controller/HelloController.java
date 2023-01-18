@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
@@ -24,5 +25,11 @@ public class HelloController {
     public String helloMvc(@RequestParam(value = "name") String name, Model model){
         model.addAttribute("name", name);
         return "hello-template";
+    }
+
+    @GetMapping("hello-string")
+    @ResponseBody // http의 header, <body>부에 해당 내용을 직접 넣어 주겠다는 뜻
+    public String helloString(@RequestParam("name") String name){
+        return "hello" + name;
     }
 }
