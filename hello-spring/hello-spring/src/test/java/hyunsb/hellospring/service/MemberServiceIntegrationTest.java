@@ -1,0 +1,54 @@
+package hyunsb.hellospring.service;
+
+import hyunsb.hellospring.domain.Member;
+import hyunsb.hellospring.repository.MemberRepository;
+import hyunsb.hellospring.repository.MemoryMemberRepository;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+@SpringBootTest
+@Transactional // 테스트를 실행할 때 트렌젝션을 실행하고 테스트 종료 시 데이터베이스 롤백
+class MemberServiceIntegrationTest {
+
+    @Autowired MemberService memberService;
+    @Autowired MemberRepository memoryMemberRepository;
+
+    @Test
+    void 회원가입() {
+        //given: 상황이 주어졌을 때
+        Member member = new Member();
+        member.setName("member1");
+
+        //when: 실행 시
+        Long saveId = memberService.join(member);
+
+        //then: 결과
+        //Optional<Member> one = memberService.findOne(saveId).get();
+        Member findMember = memberService.findOne(saveId).get();
+        assertThat(member.getName()).isEqualTo(findMember.getName());
+    }
+
+    @Test
+    public void 중복_회원_예외() {
+        //given
+        Member member1 = new Member();
+        member1.setName("duplication member");
+
+        Member member2 = new Member();
+        member2.setName("duplication member");
+
+        //when
+        memberService.join(member1);
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+
+        //then
+        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+    }
+}
