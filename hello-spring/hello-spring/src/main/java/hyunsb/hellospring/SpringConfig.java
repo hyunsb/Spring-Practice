@@ -1,26 +1,28 @@
 package hyunsb.hellospring;
 
-import hyunsb.hellospring.repository.JdbcMemberRepository;
-import hyunsb.hellospring.repository.JdbcTemplateMemberRepository;
-import hyunsb.hellospring.repository.MemberRepository;
-import hyunsb.hellospring.repository.MemoryMemberRepository;
+import hyunsb.hellospring.repository.*;
 import hyunsb.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
 
 //    @Autowired DataSource dataSource;
-    private DataSource dataSource;
+//    private DataSource dataSource;
+//
+//    @Autowired
+//    public SpringConfig(DataSource dataSource){
+//        this.dataSource = dataSource;
+//    }
 
-    @Autowired
-    public SpringConfig(DataSource dataSource){
-        this.dataSource = dataSource;
-    }
+//    @PersistenceContext
+    private EntityManager em;
 
     @Bean
     public MemberService memberService(){
@@ -31,6 +33,7 @@ public class SpringConfig {
     public MemberRepository memberRepository(){
 //        return new MemoryMemberRepository();
 //        return new JdbcMemberRepository(dataSource);
-        return new JdbcTemplateMemberRepository(dataSource);
+//        return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(em);
     }
 }
