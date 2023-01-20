@@ -13,8 +13,9 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+// Spring, Database 통합 테스트 코드
 @SpringBootTest
-@Transactional // 테스트를 실행할 때 트렌젝션을 실행하고 테스트 종료 시 데이터베이스 롤백
+@Transactional // 각각의 테스트 시작 전에 트랜잭션을 시작하고 테스트 완료 후에 항상 롤백한다.
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
