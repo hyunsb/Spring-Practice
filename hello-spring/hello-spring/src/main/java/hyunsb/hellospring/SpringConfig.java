@@ -1,6 +1,7 @@
 package hyunsb.hellospring;
 
 import hyunsb.hellospring.repository.JdbcMemberRepository;
+import hyunsb.hellospring.repository.JdbcTemplateMemberRepository;
 import hyunsb.hellospring.repository.MemberRepository;
 import hyunsb.hellospring.repository.MemoryMemberRepository;
 import hyunsb.hellospring.service.MemberService;
@@ -29,6 +30,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository(){
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
