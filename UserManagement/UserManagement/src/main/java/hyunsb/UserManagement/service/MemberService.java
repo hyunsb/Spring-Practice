@@ -3,10 +3,12 @@ package hyunsb.UserManagement.service;
 import hyunsb.UserManagement.domain.Member;
 import hyunsb.UserManagement.repository.MemberRepository;
 import hyunsb.UserManagement.repository.MemoryMemberRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
