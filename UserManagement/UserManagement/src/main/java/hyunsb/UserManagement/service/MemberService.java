@@ -2,16 +2,20 @@ package hyunsb.UserManagement.service;
 
 import hyunsb.UserManagement.domain.Member;
 import hyunsb.UserManagement.repository.MemberRepository;
-import hyunsb.UserManagement.repository.MemoryMemberRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
 
     public Long join(Member member){
         //중복 회원 검증
