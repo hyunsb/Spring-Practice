@@ -11,4 +11,11 @@ public class MemberController {
     public String join() {
         return "members/createMemberForm";
     }
+
+    @PostMapping("/members/new")
+    public String join(MemberForm form) {
+        // 회원 가입 서비스
+
+        return "redirect:/";
+    }
 }
