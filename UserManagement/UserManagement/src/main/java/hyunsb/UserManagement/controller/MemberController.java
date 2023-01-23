@@ -9,6 +9,6 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String join() {
-        return "members/new";
+        return "members/createMemberForm";
     }
 }
