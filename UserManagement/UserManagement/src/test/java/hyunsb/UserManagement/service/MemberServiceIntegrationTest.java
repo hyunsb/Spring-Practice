@@ -1,7 +1,11 @@
 package hyunsb.UserManagement.service;
 
 import hyunsb.UserManagement.domain.Member;
+import hyunsb.UserManagement.repository.JdbcTemplateMemberRepository;
 import hyunsb.UserManagement.repository.MemberRepository;
+import hyunsb.UserManagement.repository.MemoryMemberRepository;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,14 +14,13 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-// Spring, Database 통합 테스트 코드
+
 @SpringBootTest
-@Transactional // 각각의 테스트 시작 전에 트랜잭션을 시작하고 테스트 완료 후에 항상 롤백한다.
+@Transactional
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
-    @Autowired
-    MemberRepository memoryMemberRepository;
+    @Autowired MemberRepository memberRepository;
 
     @Test
     void 회원가입() {
@@ -44,10 +47,25 @@ class MemberServiceIntegrationTest {
         member2.setName("duplication member");
 
         //when
+        /*memberService.join(member1);
+        try {
+            memberService.join(member2);
+            fail();
+        } catch (IllegalStateException exception){
+            assertThat(exception.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+        }*/
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 
         //then
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+    }
+
+    @Test
+    void findMembers() {
+    }
+
+    @Test
+    void findOne() {
     }
 }
