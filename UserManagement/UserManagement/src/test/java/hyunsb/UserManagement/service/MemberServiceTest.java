@@ -1,7 +1,7 @@
 package hyunsb.UserManagement.service;
 
-import hyunsb.hellospring.domain.Member;
-import hyunsb.hellospring.repository.MemoryMemberRepository;
+import hyunsb.UserManagement.domain.Member;
+import hyunsb.UserManagement.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
