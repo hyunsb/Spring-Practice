@@ -41,10 +41,10 @@ class MemberServiceIntegrationTest {
     public void 중복_회원_예외() {
         //given
         Member member1 = new Member();
-        member1.setName("duplication member");
+        member1.setName("Duplicate Member");
 
         Member member2 = new Member();
-        member2.setName("duplication member");
+        member2.setName("Duplicate Member");
 
         //when
         /*memberService.join(member1);
