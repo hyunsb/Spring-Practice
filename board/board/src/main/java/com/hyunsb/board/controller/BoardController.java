@@ -3,12 +3,16 @@ package com.hyunsb.board.controller;
 import com.hyunsb.board.entity.Board;
 import com.hyunsb.board.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Controller
 public class BoardController {
@@ -22,9 +26,20 @@ public class BoardController {
     }
 
     @PostMapping("/board/writePro")
-    public String boardWritePro(Board board){
-        boardService.write(board);
-        return "boardWrite";
+    public String boardWritePro(Board board, Model model, MultipartFile file) throws IOException {
+
+        boardService.write(board, file);
+        int result = 1;
+
+        if(result == 1) {
+            model.addAttribute("message", "글 작성이 완료 되었습니다.");
+        } else {
+            model.addAttribute("message", "글 작성이 실패 하였습니다.");
+        }
+
+        model.addAttribute("searchUrl", "/board/list");
+
+        return "message";
     }
 
     @GetMapping("/board/list")
@@ -40,9 +55,14 @@ public class BoardController {
     }
 
     @GetMapping("/board/delete")
-    public String boardDelete(Integer id){
+    public String boardDelete(Integer id, Model model){
+
         boardService.boardDelete(id);
-        return "redirect:/board/list";
+
+        model.addAttribute("message", "게시글이 삭제 되었습니다.");
+        model.addAttribute("searchUrl", "/board/list");
+
+        return "message";
     }
 
     @GetMapping("board/modify/{id}")
@@ -54,15 +74,18 @@ public class BoardController {
     }
 
     @PostMapping("/board/update/{id}")
-    public String boardUpdate(@PathVariable("id") Integer id, Board board){
+    public String boardUpdate(@PathVariable("id") Integer id, Board board, Model model, MultipartFile file) throws IOException {
 
         Board boardTemp = boardService.boardView(id);
 
         boardTemp.setTitle(board.getTitle());
         boardTemp.setContent(board.getContent());
 
-        boardService.write(boardTemp);
+        boardService.write(boardTemp, file);
 
-        return "redirect:/board/list";
+        model.addAttribute("message", "게시글이 수정 되었습니다.");
+        model.addAttribute("searchUrl", "/board/view?id=" + board.getId());
+
+        return "message";
     }
 }
