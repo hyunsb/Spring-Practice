@@ -19,7 +19,7 @@ public class BoardService {
     // 게시글 작성 처리
     public void write(Board board, MultipartFile file) throws IOException {
 
-        String projectPath = System.getProperty("user.dir")+"//board//src//main//resources//static//files"; // 프로젝트의 경로
+        String projectPath = System.getProperty("user.dir")+"\\board\\src\\main\\resources\\static\\files"; // 프로젝트의 경로
 
         UUID uuid = UUID.randomUUID();
         String fileName = uuid + "_" + file.getOriginalFilename();
@@ -27,6 +27,9 @@ public class BoardService {
         File saveFile = new File(projectPath, fileName);
 
         file.transferTo(saveFile);
+
+        board.setFilename(fileName);
+        board.setFilepath("/files/" + fileName);
 
         boardRepository.save(board);
     }
