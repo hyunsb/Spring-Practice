@@ -35,9 +35,16 @@
     </table>
 
     <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
-      <a th:if="${page != nowPage}" th:href="@{/board/list(page = ${page - 1})}" th:text="${page}"></a>
+      <a th:if="${page != nowPage}" th:href="@{/board/list(page = ${page - 1}, searchKeyWord = ${param.searchKeyWord})}" th:text="${page}"></a>
       <strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
     </th:block>
+
+    <form th:action="@{/board/list}" method="get">
+      <label>
+        <input type="text" name="searchKeyWord">
+      </label>
+      <button type="submit">검색</button>
+    </form>
   </div>
 
 </body>
