@@ -51,6 +51,7 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
+    // 게시글 페이징 처리
     public Page<Board> boardSearchList(String searchKeyWord, Pageable pageable){
 
         return boardRepository.findByTitleContaining(searchKeyWord, pageable);
