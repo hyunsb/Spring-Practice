@@ -6,6 +6,8 @@ import com.hyunsb.login.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class MemberService {
@@ -18,5 +20,19 @@ public class MemberService {
 
         // 2. repository 의 save 메서드 호출
         memberRepository.save(memberEntity);
+    }
+
+    public MemberDTO login(MemberDTO memberDTO) {
+        Optional<MemberEntity> byMemberEmail = memberRepository.findByMemberEmail(memberDTO.getMemberEmail());
+        if(byMemberEmail.isPresent()) {
+            //조회 결과 존재
+            MemberEntity memberEntity = byMemberEmail.get();
+
+            if(memberEntity.getMemberPassword().equals(memberDTO.getMemberPassword())){
+                return MemberDTO.toMemberDTO(memberEntity);
+            }
+        }
+
+        return null;
     }
 }
