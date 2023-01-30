@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequiredArgsConstructor // 생성자 자동생성
 public class MemberController {
@@ -29,11 +31,17 @@ public class MemberController {
         return "member/login";
     }
 
+    @GetMapping("/member/login")
+    public String loginForm(){
+        return "member/login";
+    }
+
     @PostMapping("/member/login")
-    public String login(@ModelAttribute MemberDTO memberDTO){
+    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session){
         MemberDTO loginResult = memberService.login(memberDTO);
         if (loginResult != null) {
-            // 로그인 성공
+            // 로그인 성공, 세션에 저장
+            session.setAttribute("loginEmail", loginResult.getMemberEmail());
             return "main";
         } else {
             // 로그인 실패
