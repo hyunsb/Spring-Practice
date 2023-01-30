@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Member List</title>
 </head>
 <body>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Name</th>
+        <th>상세조회</th>
+        <th>삭제</th>
+    </tr>
+    <tr th:each="member : ${memberList}">
+        <td th:text="${member.getId()}"></td>
+        <td th:text="${member.getMemberEmail()}"></td>
+        <td th:text="${member.getMemberPassword()}"></td>
+        <td th:text="${member.getMemberName()}"></td>
+        <td>
+            <!-- query string: /member?id=? -->
+            <!-- rest api: /member/1 -->
+            <a th:href="@{|/member/${member.id}|}">조회</a>
+        </td>
+        <td>
+            <a th:href="@{|/member/delete/${member.id}|}">삭제</a>
+        </td>
+    </tr>
+
+</table>
 
 </body>
 </html>
