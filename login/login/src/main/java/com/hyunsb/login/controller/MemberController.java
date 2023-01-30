@@ -5,12 +5,14 @@ import com.hyunsb.login.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor // 생성자 자동생성
@@ -47,6 +49,12 @@ public class MemberController {
             // 로그인 실패
             return "/member/login";
         }
+    }
+
+    @GetMapping("/member/list")
+    public String list(Model model){
+        model.addAttribute("memberList", memberService.findAll());
+        return "/member/list";
     }
 
 }
