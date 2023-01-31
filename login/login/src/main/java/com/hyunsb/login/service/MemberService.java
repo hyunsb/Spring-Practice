@@ -49,6 +49,8 @@ public class MemberService {
     }
 
     public MemberDTO findById(Long id) {
+        Optional<MemberEntity> memberEntity = memberRepository.findById(id);
 
+        return memberEntity.map(MemberDTO::toMemberDTO).orElse(null);
     }
 }
