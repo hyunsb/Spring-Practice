@@ -9,12 +9,13 @@
 <table>
     <tr>
         <th>Id</th>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Name</th>
+        <th>memberEmail</th>
+        <th>memberPassword</th>
+        <th>memberName</th>
         <th>상세조회</th>
         <th>삭제</th>
     </tr>
+
     <tr th:each="member : ${memberList}">
         <td th:text="${member.getId()}"></td>
         <td th:text="${member.getMemberEmail()}"></td>

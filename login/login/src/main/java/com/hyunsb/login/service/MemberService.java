@@ -47,4 +47,8 @@ public class MemberService {
 
         return memberDTOList;
     }
+
+    public MemberDTO findById(Long id) {
+
+    }
 }
