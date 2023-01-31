@@ -53,4 +53,10 @@ public class MemberService {
 
         return memberEntity.map(MemberDTO::toMemberDTO).orElse(null);
     }
+
+    public MemberDTO updateForm(String myEmail) {
+        Optional<MemberEntity> byMemberEmail = memberRepository.findByMemberEmail(myEmail);
+
+        return byMemberEmail.map(MemberDTO::toMemberDTO).orElse(null);
+    }
 }
