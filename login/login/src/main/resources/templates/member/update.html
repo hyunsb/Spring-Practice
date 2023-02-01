@@ -17,9 +17,9 @@
 
   <tr>
     <td th:text="${updateMember.getId()}"></td>
-    <td><input type="text" placeholder="${updateMember.getMemberEmail()}"></td>
-    <td><input type="text" placeholder="${updateMember.getMemberPassword()}"></td>
-    <td><input type="text" placeholder="${updateMember.getMemberName()}"></td>
+    <td><input type="text" th:placeholder="${updateMember.getMemberEmail()}"></td>
+    <td><input type="text" th:placeholder="${updateMember.getMemberPassword()}"></td>
+    <td><input type="text" th:placeholder="${updateMember.getMemberName()}"></td>
   </tr>
 </table>
 
