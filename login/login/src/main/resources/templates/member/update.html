@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Update</title>
+</head>
+<body>
+
+<!--updateMember-->
+<table>
+  <tr>
+    <th>Id</th>
+    <th>memberEmail</th>
+    <th>memberPassword</th>
+    <th>memberName</th>
+  </tr>
+
+  <tr>
+    <td th:text="${updateMember.getId()}"></td>
+    <td><input type="text" placeholder="${updateMember.getMemberEmail()}"></td>
+    <td><input type="text" placeholder="${updateMember.getMemberPassword()}"></td>
+    <td><input type="text" placeholder="${updateMember.getMemberName()}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
