@@ -2,16 +2,6 @@
 
 jdbc, jpa 실습 예제
 
-Model Controller View (MVC)
-
-Controller: 요청에 어떻게 응답할 것인가
-
-Service: 실제 서비스 로직
-
-Domain: 데이터 타입
-
-View: 출력
-
 ---
 
 ## ✅스프링 프로젝트 생성
@@ -20,21 +10,21 @@ View: 출력
 
 [https://start.spring.io/](https://start.spring.io/)
 
-![Untitled](%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%2065fd5c3110c14aad8f9869900cfebcc0/Untitled.png)
+![Untitled](README_src/Untitled.png)
 
 커멘드로 해당 폴더에 진입
 
-![Untitled](%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%2065fd5c3110c14aad8f9869900cfebcc0/Untitled%201.png)
+![Untitled](README_src/Untitled%201.png)
 
 ./gradlew build 실행
 
 main/resources/static/index.html 파일 생성 (welcome file)
 
-![Untitled](%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%2065fd5c3110c14aad8f9869900cfebcc0/Untitled%202.png)
+![Untitled](README_src/Untitled%202.png)
 
 ### 서버 실행
 
-![Untitled](%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%2065fd5c3110c14aad8f9869900cfebcc0/Untitled%203.png)
+![Untitled](README_src/Untitled%203.png)
 
 ## db연동(h2 database)
 
@@ -42,7 +32,7 @@ main/resources/static/index.html 파일 생성 (welcome file)
 
 /sql/ddl.sql 생성
 
-![Untitled](%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%2065fd5c3110c14aad8f9869900cfebcc0/Untitled%204.png)
+![Untitled](README_src/Untitled%204.png)
 
 build.gradle에 jdbc, h2데이터베이스 관련 라이브러리 추가
 
@@ -64,7 +54,7 @@ runtimeOnly 'com.h2database:h2'
 
 `DataSource`: DB와 관련된 커넥션 정보를 가짐, DB Connection Pooling기능을 가짐, 빈으로 동록하여 인자를 넘겨줌(Spring은 DataSource로 DB와 커넥션을 획득)
 
-![Untitled](%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%20%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5%20%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%84%89%E1%85%B3%2065fd5c3110c14aad8f9869900cfebcc0/Untitled%205.png)
+![Untitled](README_src/Untitled%205.png)
 
 <aside>
 ✨ `DataSource`는 항상 스프링 컨테이너에서 빈으로 구성해야 한다.
