@@ -2,11 +2,9 @@
 
 jdbc, jpa 실습 예제
 
----
 
 ## ✅스프링 프로젝트 생성
 
----
 
 [https://start.spring.io/](https://start.spring.io/)
 
@@ -28,7 +26,6 @@ main/resources/static/index.html 파일 생성 (welcome file)
 
 ## db연동(h2 database)
 
----
 
 /sql/ddl.sql 생성
 
@@ -48,7 +45,6 @@ runtimeOnly 'com.h2database:h2'
 
 ### ✅Jdbc 데이터베이스에 대한 접근 방법
 
----
 
 `JdbcTemplate`: 기본적인스프링 JDBC 접근법 (DataSource로 DB와 커넥션)
 
@@ -63,7 +59,6 @@ runtimeOnly 'com.h2database:h2'
 
 ### ✅DataBase 연동
 
----
 
 - DB와의 연결을 위해 DB서버 정보를 설정 (Property)
     
@@ -106,7 +101,7 @@ runtimeOnly 'com.h2database:h2'
 
 ## Domain 생성
 
----
+
 
 회원 정보를 담을 `Member` 객체 생성
 
@@ -136,7 +131,7 @@ public class Member {
 
 ## Repository 인터페이스 생성
 
----
+
 
 ```java
 public interface MemberRepository {
@@ -158,7 +153,7 @@ public interface MemberRepository {
 
 ## JdbcTemplataMemberRepository 생성
 
----
+
 
 ```java
 @Repository
