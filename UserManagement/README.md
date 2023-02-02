@@ -212,8 +212,6 @@ public class JdbcTemplateMemberRepository implements MemberRepository{
 
 ## MemberService 생성 (MemoryRepository)
 
----
-
 ```java
 @Service
 public class MemberService {
@@ -250,7 +248,7 @@ public class MemberService {
 
 ## Spring Bean에 등록하기
 
----
+
 
 1. 각 클래스에 알맞은 애노테이션을 추가하여 Spring Bean에 등록한다.
     
@@ -292,7 +290,6 @@ DI(Dependency Injection)에는 필드 주입, setter 주입, 생성자 주입 3�
 
 - 생성자 주입
     
-    ---
     
     ```java
     @Controller
@@ -309,7 +306,6 @@ DI(Dependency Injection)에는 필드 주입, setter 주입, 생성자 주입 3�
     
 - 필드 주입
     
-    ---
     
     ```java
     @Controller
@@ -321,7 +317,7 @@ DI(Dependency Injection)에는 필드 주입, setter 주입, 생성자 주입 3�
     
 - setter 주입
     
-    ---
+
     
     단점: 주입 메서드가 public으로 외부에 노출될 가능성이 존재함
     
@@ -341,7 +337,7 @@ DI(Dependency Injection)에는 필드 주입, setter 주입, 생성자 주입 3�
 
 ## MemberController 생성
 
----
+
 
 ```java
 @Controller
@@ -394,7 +390,7 @@ public class MemberForm {
 
 ## JPA
 
----
+
 
 JPA는기존의반복코드는 물론이고, 기본적인 SQL도 JPA가 직접만들어서실행해준다.
 
@@ -414,7 +410,6 @@ spring.jpa.hibernate.ddl-auto=none
 
 ### JpaMemberRepository 생성
 
----
 
 ```java
 public class JpaMemberRepository implements MemberRepository{
