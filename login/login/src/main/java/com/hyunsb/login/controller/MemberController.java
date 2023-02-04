@@ -3,6 +3,7 @@ package com.hyunsb.login.controller;
 import com.hyunsb.login.dto.MemberDTO;
 import com.hyunsb.login.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,6 +70,11 @@ public class MemberController {
 
         model.addAttribute("updateMember", memberDTO);
         return "/member/update";
+    }
+
+    @PostMapping("/member/update")
+    public String memberUpdate(@ModelAttribute MemberDTO memberDTO, Session session){
+        return null;
     }
 
 }
