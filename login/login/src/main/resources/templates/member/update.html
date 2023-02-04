@@ -7,21 +7,13 @@
 <body>
 
 <!--updateMember-->
-<table>
-  <tr>
-    <th>Id</th>
-    <th>memberEmail</th>
-    <th>memberPassword</th>
-    <th>memberName</th>
-  </tr>
 
-  <tr>
-    <td th:text="${updateMember.getId()}"></td>
-    <td><input type="text" th:placeholder="${updateMember.getMemberEmail()}"></td>
-    <td><input type="text" th:placeholder="${updateMember.getMemberPassword()}"></td>
-    <td><input type="text" th:placeholder="${updateMember.getMemberName()}"></td>
-  </tr>
-</table>
+<form action="/member/update" method="post">
+  이메일: <input type="text" name="updateEmail" th:value="${updateMember.getMemberEmail()}"> <br>
+  비밀번호: <input type="text" name="updatePassword" th:value="${updateMember.getMemberPassword()}"> <br>
+  이름: <input type="text" name="updateName" th:value="${updateMember.getMemberName()}"> <br>
+  <input type="submit" value="정보수정">
+</form>
 
 </body>
 </html>
