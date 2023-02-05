@@ -59,4 +59,8 @@ public class MemberService {
 
         return byMemberEmail.map(MemberDTO::toMemberDTO).orElse(null);
     }
+
+    public void updateMemberInfo(MemberDTO memberDTO) {
+
+    }
 }
