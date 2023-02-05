@@ -5,6 +5,7 @@ import com.hyunsb.login.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -74,6 +75,7 @@ public class MemberController {
 
     @PostMapping("/member/update")
     public String memberUpdate(@ModelAttribute MemberDTO memberDTO, Session session){
+        memberService.updateMemberInfo(memberDTO);
         return null;
     }
 
