@@ -60,7 +60,7 @@ public class MemberService {
         return byMemberEmail.map(MemberDTO::toMemberDTO).orElse(null);
     }
 
-    public void updateMemberInfo(MemberDTO memberDTO) {
-
+    public void update(MemberDTO memberDTO) {
+        memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDTO));
     }
 }

@@ -74,9 +74,9 @@ public class MemberController {
     }
 
     @PostMapping("/member/update")
-    public String memberUpdate(@ModelAttribute MemberDTO memberDTO, Session session){
-        memberService.updateMemberInfo(memberDTO);
-        return null;
-    }
+    public String memberUpdate(@ModelAttribute MemberDTO memberDTO){
+        memberService.update(memberDTO);
 
+        return "redirect:/member/" + memberDTO.getId();
+    }
 }
