@@ -22,9 +22,16 @@ public class RestController {
 
     /* 책 전체 조회 */
     @RequestMapping(method = RequestMethod.GET, path = "/book")
-    public String getAll(Model model){
+    public String findAllBook(Model model){
         model.addAttribute("bookList", bookService.findAll());
         return "list";
+    }
+
+    /* 책 상세 조회 */
+    @RequestMapping(method = RequestMethod.GET, path = "/book/{id}")
+    public String bookDetail(Model model){
+
+        return "detail";
     }
 
     /* 책 정보 등록 */
