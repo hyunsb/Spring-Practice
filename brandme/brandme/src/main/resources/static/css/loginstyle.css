@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+* {margin: 0px; padding: 0px; box-sizing: border-box;}
+
+:root {
+    --header-height: 3rem;
+
+    /* 사용자 값에 따라 변경 가능하도록 */
+
+    /* HSL 색삭표 참고 사이트
+    https://www.w3schools.com/colors/colors_hsl.asp
+    purple 250, green 142, blue 230 pink 340 */
+
+    --hue-color: 250;
+
+    /* -----------------HSL color 변수------------------ */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #FFF;
+
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /* --------------------Font size 변수-------------------- */
+
+    --body-font: 'Poppins', sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+
+    /* Font weight */
+
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* --------------------Margin 변수-------------------- */
+
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* -------------------z-index 변수-------------------- */
+
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("../img/bg12.jpg") no-repeat center;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0px; right: 0px; bottom: 0px; left: 0px;
+    /* background-color: rgba(0, 0, 0, .3); */
+}
+
+.login-form {
+    position: relative;
+    z-index: 2;
+    padding: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px #000000b7
+}
+
+/* .login-form > h1 {
+    font-size: 70px; 
+    text-shadow: 1px 1px 30px rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.884);
+    text-align: center;
+    margin-bottom: 60px;
+} */
+
+.logo > h1 {
+    /* text-transform: uppercase; */
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 500;
+    color: #5b00d3;
+    /* text-shadow: 0px 0px 80px rgba(0, 0, 0), 0px 0px 40px rgb(0, 0, 0), 0px 0px 10px rgb(255, 255, 255); */
+
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.404);
+    caret-color: #cbcbcb;
+    outline: none;
+}
+
+/* .logo {
+    position: relative;
+}
+
+.logo ::before{
+    content: '';
+    position: absolute;
+    top : 10px;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: rgb(221, 221, 221);
+    animation: blinkCursor 0.8s steps(3) infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 75%{
+        opacity: 1;
+    }
+    76%, 100% {
+        opacity: 0;
+    }
+}
+
+.logo > h1{
+    position: relative;
+    font-size: 60px;
+    color: rgb(221, 221, 221);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: typing 8s steps(3) infinite;
+    overflow: hidden;
+
+} */
+
+
+@keyframes typing{
+    0%, 90%, 100%{
+        width: 0;
+    }
+    30%, 60% {
+        width : 150px;
+    }
+}
+
+
+.int-area {
+    width: 400px; position: relative;
+    margin-top: 20px;
+}
+
+.int-area:first-child {margin-top: 0px;}
+
+.int-area input {
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #999;
+    font-size: 18px; color: rgba(46, 46, 46, 0.801);
+    font-weight: bold;
+    outline: none;
+}
+
+.int-area label {
+    position: absolute; left: 10px; top: 15px;
+    font-size: 18px; color: rgb(134, 134, 134);
+    font-weight: var(--font-medium);
+    transition: all .5s ease;
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+    top: -2px;
+    font-size: 13px; color: var(--first-color-alt);
+    font-weight: var(--font-medium);
+}
+
+.btn-area {margin-top: 30px;}
+
+/* .btn-area button {
+    width: 100%; height: 50px;
+    background: #4d038a56;
+    color: #fff;
+    font-size: 20px;
+    border: solid 3px #6f038a00;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px #00000054;
+} */
+
+.btn-area button {
+    width: 100%;
+    height: 50px;
+    padding: 15px 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: var(--font-semi-bold);
+
+    cursor: pointer;
+    background: var(--first-color);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: -7px -7px 20px 0 rgba(255, 255, 255, .3),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+.btn-area button:hover{
+    /* box-shadow: inset -7px -7px 20px 0 rgba(255, 255, 255, .3),
+    inset 7px 7px 20px 0 rgba(0, 0, 0, 0.5); */
+    background: var(--first-color-lighter);
+
+}
+
+.caption {
+    display: flex;
+    margin-top: 20px;
+}
+
+.caption_items {
+    flex: 1;
+    text-align: center;
+}
+
+.caption_items:not(:last-child){
+    border-right: 1px solid rgba(114, 114, 114, 0.418);
+}
+
+.caption a {
+    font-size: 15px; color: rgb(66, 66, 66);
+    text-decoration: none;
+}
