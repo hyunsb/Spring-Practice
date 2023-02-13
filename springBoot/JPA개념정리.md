@@ -1,3 +1,5 @@
+# JPA 개념정리
+
 ## JPA란?
 
 ---
@@ -64,10 +66,10 @@ class Team{
 
 ```java
 class Player{
-	int id;
-	String name;
-	// DB의 저장 타입과 일치하지 않지만 이를 JPA가 ORM를 통해 자동으로 처리해준다!
-	Team team;
+  int id;
+  String name;
+  // DB의 저장 타입과 일치하지 않지만 이를 JPA가 ORM를 통해 자동으로 외래키 처리해준다!
+  Team team;
 }
 ```
 
