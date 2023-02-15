@@ -22,11 +22,11 @@
 
 ---
 
-## ■  DispatchServlet
+## ■  DispatcherServlet
 
 - Spring에서 제공하는 `FrontController 패턴` + `RequestDispatcher`의 기능을 수행하는 기술
 - DispatchServlet이 자동생성되어 질 때 수 많은 객체가 생성(IoC) 된다.(Controller, Repository, Bean, … ) 이는 보통 필터들이고 해당 필터들은 기본적으로 필요한 자동으로 등록되고, 개발자가 추가적인 필터를 직접 등록할 수도 있다.
 - 컴포넌트 스캔 - src 루트에 있는 모든 객체를 스캔하여 Heap 영역에 등재 (IoC)
   어노테이션을 통하여 메모리에 등재할 것을 구분한다.
 - 요청에 대한 응답(주소 분배) - 컴포넌트 스캔 이후 요청에 대한 응답 처리
-- DispatchServlet에서 생성되는 수많은 객체들은 어디서 관리될까 - `스프링 컨테이너`
+- DispatcherServlet에서 생성되는 수많은 객체들은 어디서 관리될까 - `스프링 컨테이너`
