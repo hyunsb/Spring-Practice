@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a1a1d2-bc24-4bef-a414-aa767a8c3bfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/ProductServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +73,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_directory_selection": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice",
-    "last_opened_file_path": "E:/Spring Study/product-order-service/product-order-service",
+    "last_opened_file_path": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice/product",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,6 +91,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.hyunsb.productorderservice.product" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jhass\Spring-Practice\product-order-service\product-order-service\src\main\java\com\hyunsb\productorderservice\product" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -102,8 +106,11 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.hyunsb.productorderservice.product" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hyunsb.productorderservice" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductServiceTest">
+  <component name="RunManager" selected="JUnit.ProductServiceTest (1)">
     <configuration name="ProductOrderServiceApplicationTests.contextLoads" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -150,16 +157,31 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="ProductServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="product-order-service.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hyunsb.productorderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hyunsb.productorderservice" />
+      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.ProductServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="product-order-service.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hyunsb.productorderservice.product.*" />
+          <option name="PATTERN" value="com.hyunsb.productorderservice.product_POJO.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hyunsb.productorderservice.product" />
-      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.product.ProductServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.product_POJO.ProductServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,6 +221,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductServiceTest (1)" />
         <item itemvalue="JUnit.ProductServiceTest" />
         <item itemvalue="Gradle.ProductServiceTest" />
         <item itemvalue="Gradle.ProductOrderServiceApplicationTests.contextLoads" />
@@ -216,7 +239,7 @@
       <workItem from="1676813980672" duration="4416000" />
       <workItem from="1676819774854" duration="96000" />
       <workItem from="1676819882790" duration="575000" />
-      <workItem from="1676820468894" duration="3758000" />
+      <workItem from="1676820468894" duration="4087000" />
     </task>
     <servers />
   </component>
