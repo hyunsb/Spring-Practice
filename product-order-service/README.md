@@ -1,4 +1,6 @@
 https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%8B%A4%EC%A0%84-%EC%83%81%ED%92%88%EC%A3%BC%EB%AC%B8-tdd
+![image](https://user-images.githubusercontent.com/96504592/219969829-4cee5287-dc60-4240-b436-d2b18e659e99.png)
+
 
 스프링부트를 이용해 TDD로 웹 애플리케이션(상품-주문 API 개발)을 만드는 방법을 공부한다.
 
