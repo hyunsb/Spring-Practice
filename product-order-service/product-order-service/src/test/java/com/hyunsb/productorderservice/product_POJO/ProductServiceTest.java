@@ -1,4 +1,4 @@
-package com.hyunsb.productorderservice.product;
+package com.hyunsb.productorderservice.product_POJO;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

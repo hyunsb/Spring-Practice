@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a1a1d2-bc24-4bef-a414-aa767a8c3bfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/AddProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/DiscountPolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductPort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +71,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_directory_selection": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice",
     "last_opened_file_path": "E:/Spring Study/product-order-service/product-order-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -102,6 +94,9 @@
       <recent name="" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="com.hyunsb.productorderservice.product" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.hyunsb.productorderservice.product" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -221,7 +216,7 @@
       <workItem from="1676813980672" duration="4416000" />
       <workItem from="1676819774854" duration="96000" />
       <workItem from="1676819882790" duration="575000" />
-      <workItem from="1676820468894" duration="2929000" />
+      <workItem from="1676820468894" duration="3758000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-package com.hyunsb.productorderservice.product;
+package com.hyunsb.productorderservice.product_POJO;
 
 import java.util.HashMap;
 import java.util.Map;

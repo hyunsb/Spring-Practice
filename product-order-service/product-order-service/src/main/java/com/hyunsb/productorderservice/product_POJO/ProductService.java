@@ -1,4 +1,4 @@
-package com.hyunsb.productorderservice.product;
+package com.hyunsb.productorderservice.product_POJO;
 
 // 상품 등록 서비스
 class ProductService {

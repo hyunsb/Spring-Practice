@@ -1,4 +1,4 @@
-package com.hyunsb.productorderservice.product;
+package com.hyunsb.productorderservice.product_POJO;
 
 interface ProductPort {
     void save(final Product product);
