@@ -2,13 +2,16 @@ package com.hyunsb.productorderservice.product_POJO;
 
 import org.springframework.util.Assert;
 
-// 상품 등록 리퀘스트
-record AddProductRequest(String name, int price, DiscountPolicy discountPolicy) {
+public record GetProductResponse(
+        long id,
+        String name,
+        int price,
+        DiscountPolicy discountPolicy
+) {
+    public GetProductResponse {
 
-    public AddProductRequest {
-
+        Assert.notNull(id, "상품 ID는 필수입니다.");
         Assert.hasText(name, "상품명은 필수입니다.");
-        Assert.isTrue(price > 0, "상품 가격은 0보다 커야 합니다.");
         Assert.notNull(discountPolicy, "할인 정책은 필수입니다.");
 
     }

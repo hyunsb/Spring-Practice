@@ -13,4 +13,8 @@ class ProductRepository {
         product.assignId(++sequence);
         persistence.put(product.getId(), product);
     }
+
+    public Product findById(long productId) {
+        return persistence.get(productId);
+    }
 }

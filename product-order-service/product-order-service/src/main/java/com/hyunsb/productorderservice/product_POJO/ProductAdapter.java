@@ -12,4 +12,9 @@ class ProductAdapter implements ProductPort {
     public void save(Product product) {
         productRepository.save(product);
     }
+
+    @Override
+    public Product getProduct(long productId) {
+        return productRepository.findById(productId);
+    }
 }
