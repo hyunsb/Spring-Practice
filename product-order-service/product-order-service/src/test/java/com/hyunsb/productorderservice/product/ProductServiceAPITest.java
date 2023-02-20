@@ -4,6 +4,7 @@ import com.hyunsb.productorderservice.ApiTest;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,11 +13,11 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class ProductServiceAPITest extends ApiTest{
 
+
     // 메인 테스트 코드
     @Test
     void 상품등록() {
         final var request = 상품등록요청_생성();
-
         // API 요청
         final var response = 상품등록요청(request);
 
