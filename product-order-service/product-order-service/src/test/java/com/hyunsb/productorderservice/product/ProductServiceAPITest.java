@@ -1,46 +1,39 @@
 package com.hyunsb.productorderservice.product;
 
 import com.hyunsb.productorderservice.ApiTest;
+import com.hyunsb.productorderservice.ProductSteps;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class ProductServiceAPITest extends ApiTest{
 
-
-    // 메인 테스트 코드
     @Test
     void 상품등록() {
-        final var request = 상품등록요청_생성();
+        final var request = ProductSteps.상품등록요청_생성();
         // API 요청
-        final var response = 상품등록요청(request);
+        final var response = ProductSteps.상품등록요청(request);
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
 
-    private static ExtractableResponse<Response> 상품등록요청(AddProductRequest request) {
-        // 요청 로그 남김
-        return RestAssured.given().log().all()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(request)
+    @Test
+    void 상품조회() {
+        ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
+        Long productId = 1L;
+
+        ExtractableResponse<Response> response = RestAssured.given().log().all()
                 .when()
-                .post("/products")
-                .then()
-                .log().all().extract();
-    }
+                .get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
 
-    private static AddProductRequest 상품등록요청_생성(){
-        final String name = "상품명";
-        final int price = 1000;
-        DiscountPolicy discountPolicy = DiscountPolicy.NONE;
-
-        return new AddProductRequest(name, price, discountPolicy);
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.jsonPath().getString("name")).isEqualTo("상품명");
     }
 
 }

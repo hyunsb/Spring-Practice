@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a1a1d2-bc24-4bef-a414-aa767a8c3bfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/GetProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/GetProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/ProductSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/AddProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/AddProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product_POJO/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product_POJO/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product_POJO/ProductServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceAPITest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_directory_selection": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice",
+    "last_directory_selection": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/test/java",
     "last_opened_file_path": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice/product",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -106,9 +103,13 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="com.hyunsb.productorderservice.ProductSteps" />
+      <recent name="ProductSteps" />
+    </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
-      <recent name="com.hyunsb.productorderservice.product_POJO" />
       <recent name="com.hyunsb.productorderservice.product" />
+      <recent name="com.hyunsb.productorderservice.product_POJO" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.hyunsb.productorderservice.product" />
@@ -120,30 +121,7 @@
       <recent name="com.hyunsb.productorderservice" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProductServiceAPITest">
-    <configuration name="ProductServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/product-order-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.hyunsb.productorderservice.product.ProductServiceTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.ProductServiceAPITest.상품조회">
     <configuration name="ProductServiceAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="product-order-service.test" />
       <extension name="coverage">
@@ -175,7 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceAPITest.상품조회" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="product-order-service.test" />
       <extension name="coverage">
         <pattern>
@@ -184,7 +162,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hyunsb.productorderservice.product" />
-      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.product_POJO.ProductServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.product.ProductServiceAPITest" />
+      <option name="METHOD_NAME" value="상품조회" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="product-order-service.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hyunsb.productorderservice.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hyunsb.productorderservice.product" />
+      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.product.ProductServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,6 +195,22 @@
       <option name="PACKAGE_NAME" value="com.hyunsb.productorderservice" />
       <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.ProductServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceTest.상품조회" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="product-order-service.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hyunsb.productorderservice.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hyunsb.productorderservice.product" />
+      <option name="MAIN_CLASS_NAME" value="com.hyunsb.productorderservice.product.ProductServiceTest" />
+      <option name="METHOD_NAME" value="상품조회" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -239,11 +249,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductServiceAPITest.상품조회" />
+        <item itemvalue="JUnit.ProductServiceTest (1)" />
+        <item itemvalue="JUnit.ProductServiceTest.상품조회" />
         <item itemvalue="JUnit.ProductServiceAPITest" />
         <item itemvalue="JUnit.ProductServiceAPITest.상품등록" />
-        <item itemvalue="JUnit.ProductServiceTest (1)" />
-        <item itemvalue="JUnit.ProductServiceTest" />
-        <item itemvalue="Gradle.ProductServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +268,7 @@
       <workItem from="1676813980672" duration="4416000" />
       <workItem from="1676819774854" duration="96000" />
       <workItem from="1676819882790" duration="575000" />
-      <workItem from="1676820468894" duration="18707000" />
+      <workItem from="1676820468894" duration="22556000" />
     </task>
     <servers />
   </component>
