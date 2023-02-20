@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a1a1d2-bc24-4bef-a414-aa767a8c3bfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/UpdateProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/java/com/hyunsb/productorderservice/product/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/ProductServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/ProductSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceAPITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,7 +266,7 @@
       <workItem from="1676813980672" duration="4416000" />
       <workItem from="1676819774854" duration="96000" />
       <workItem from="1676819882790" duration="575000" />
-      <workItem from="1676820468894" duration="28109000" />
+      <workItem from="1676820468894" duration="28940000" />
     </task>
     <servers />
   </component>
