@@ -41,14 +41,26 @@ public class HelloController {
     //json 방식으로 표현 {"key" : "value"}
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello helloApi(@RequestParam("name") String name){
-        Hello hello = new Hello();
-        hello.setName(name);
+    public Hello helloApi(@RequestParam("name") String name,
+                          @RequestParam("age") int age,
+                          @RequestParam("identity") String identity){
+
+        Hello hello = new Hello(name, age, identity);
         return hello;
     }
 
     public class Hello {
         private String name;
+        private int age;
+        private String identity;
+
+        public Hello(String name, int age, String identity) {
+
+            this.name = name;
+            this.age = age;
+            this.identity = identity;
+
+        }
 
         public String getName() {
             return name;
@@ -56,6 +68,22 @@ public class HelloController {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getIdentity() {
+            return identity;
+        }
+
+        public void setIdentity(String identity) {
+            this.identity = identity;
         }
     }
 }
