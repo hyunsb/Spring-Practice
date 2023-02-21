@@ -14,7 +14,7 @@ class MemoryMemberRepositoryTest {
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
     @AfterEach
-    void storeCleanUp(){
+    void CleanUp(){
         repository.clearStore();
     }
 

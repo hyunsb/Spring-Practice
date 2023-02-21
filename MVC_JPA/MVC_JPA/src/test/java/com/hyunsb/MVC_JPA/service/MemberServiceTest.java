@@ -1,7 +1,10 @@
 package com.hyunsb.MVC_JPA.service;
 
 import com.hyunsb.MVC_JPA.domain.Member;
+import com.hyunsb.MVC_JPA.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
@@ -10,7 +13,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService;
+    MemoryMemberRepository memberRepository;
+
+    @BeforeEach
+    void beforeEach(){
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
+
+    @AfterEach
+    void cleanUp(){
+        memberRepository.clearStore();
+    }
 
 
     @Test
@@ -33,9 +48,20 @@ class MemberServiceTest {
         member.setName("test");
         memberService.join(member);
 
-        try{
-            memberService.join(member);
-            fail();
-        } catch (IllegalStateException ignore){}
+        Member member2 = new Member();
+        member2.setName("test");
+
+        IllegalStateException exception = assertThrows(IllegalStateException.class, () -> {
+            memberService.join(member2);
+        });
+
+        Assertions.assertThat(exception.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+
+//        try{
+//            memberService.join(member);
+//            fail();
+//        } catch (IllegalStateException exception){
+//            Assertions.assertThat(exception.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+//        }
     }
 }
