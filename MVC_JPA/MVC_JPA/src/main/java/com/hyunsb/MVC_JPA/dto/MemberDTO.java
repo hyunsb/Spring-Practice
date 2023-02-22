@@ -1,13 +1,11 @@
-package com.hyunsb.MVC_JPA.domain;
+package com.hyunsb.MVC_JPA.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Member {
-
-    private Long id;
+public class MemberDTO {
 
     private String name;
 
