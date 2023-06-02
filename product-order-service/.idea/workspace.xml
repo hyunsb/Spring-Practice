@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55a1a1d2-bc24-4bef-a414-aa767a8c3bfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../MVC_JPA/MVC_JPA/src/main/java/com/hyunsb/MVC_JPA/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MVC_JPA/MVC_JPA/src/main/java/com/hyunsb/MVC_JPA/controller/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-order-service/src/test/java/com/hyunsb/productorderservice/product/ProductServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-order-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,11 +31,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="product-order-service" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="product-order-service" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -64,29 +60,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_directory_selection": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/test/java",
-    "last_opened_file_path": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice/product",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "spring.configuration.checksum": "65d5efdc2d34aa3d8144bb9105a37ede",
-    "two.files.diff.last.used.folder": "C:/Users/jhass/Spring-Practice/product-order-service/product-order-service"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jhass/Spring-Practice/product-order-service/product-order-service/src/main/java/com/hyunsb/productorderservice/product&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;65d5efdc2d34aa3d8144bb9105a37ede&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/Users/jhass/Spring-Practice/product-order-service/product-order-service&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.hyunsb.productorderservice.product_POJO" />
@@ -250,8 +246,6 @@
         <item itemvalue="JUnit.ProductServiceAPITest.상품수정" />
         <item itemvalue="JUnit.ProductServiceTest.상품수정" />
         <item itemvalue="JUnit.ProductTest.update" />
-        <item itemvalue="JUnit.ProductServiceAPITest.상품조회" />
-        <item itemvalue="JUnit.ProductServiceTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -267,6 +261,7 @@
       <workItem from="1676819774854" duration="96000" />
       <workItem from="1676819882790" duration="575000" />
       <workItem from="1676820468894" duration="28940000" />
+      <workItem from="1676904750288" duration="1516000" />
     </task>
     <servers />
   </component>
