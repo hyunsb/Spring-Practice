@@ -1,10 +1,10 @@
-POST http://localhost:8080/create-developer
+PUT http://localhost:8080/developer/4123
 Content-Type: application/json
 
 {
   "developerLevel": "JUNIOR",
-  "developerSkillType": "BACK_END",
-  "experienceYear": 3,
+  "developerSkillType": "FRONT_END",
+  "experienceYear": 1,
   "memberId": "4123",
   "name": "정현수",
   "age": 20

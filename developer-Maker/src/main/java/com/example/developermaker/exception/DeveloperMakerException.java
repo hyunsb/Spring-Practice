@@ -2,8 +2,8 @@ package com.example.developermaker.exception;
 
 public class DeveloperMakerException extends RuntimeException {
 
-    private DeveloperMakerErrorCode errorCode;
-    private String detailMessage;
+    private final DeveloperMakerErrorCode errorCode;
+    private final String detailMessage;
 
     public DeveloperMakerException(DeveloperMakerErrorCode errorCode) {
         super(errorCode.getMessage());
