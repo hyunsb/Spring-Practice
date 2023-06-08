@@ -1,6 +1,8 @@
 package com.example.developermaker.controller;
 
 import com.example.developermaker.dto.CreateDeveloper;
+import com.example.developermaker.dto.DeveloperDetailDto;
+import com.example.developermaker.dto.DeveloperDto;
 import com.example.developermaker.entity.Developer;
 import com.example.developermaker.service.DeveloperMakerService;
 import lombok.RequiredArgsConstructor;
@@ -19,17 +21,20 @@ public class DeveloperMakerController {
     private final DeveloperMakerService developerMakerService;
 
     @GetMapping("/developers")
-    public List<String> getAllDevelopers() {
+    public List<DeveloperDto> getAllDevelopers() {
         log.info("GET /developers HTTP/1.1");
+        return developerMakerService.getAllDevelopers();
+    }
 
-        return Arrays.asList("snow", "sela", "olaf");
+    @GetMapping("/developer/{memberId}")
+    public DeveloperDetailDto getDeveloperDetail(@PathVariable String memberId) {
+        return developerMakerService.getDeveloperDetail(memberId);
     }
 
     @PostMapping("/create-developer")
-    public Developer createDevelopers(
+    public CreateDeveloper.Response createDevelopers(
             @Valid @RequestBody CreateDeveloper.Request request) {
 
-        log.info("GET /create-developer HTTP/1.1");
         log.info("Request : {}", request);
         return developerMakerService.createDeveloper(request);
     }

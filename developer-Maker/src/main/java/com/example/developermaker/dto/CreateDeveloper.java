@@ -1,5 +1,6 @@
 package com.example.developermaker.dto;
 
+import com.example.developermaker.entity.Developer;
 import com.example.developermaker.type.DeveloperLevel;
 import com.example.developermaker.type.DeveloperSkillType;
 import lombok.*;
@@ -11,8 +12,10 @@ import javax.validation.constraints.Size;
 
 public class CreateDeveloper {
 
-    @Getter @Setter
-    @AllArgsConstructor @NoArgsConstructor
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     @Builder
     @ToString
     public static class Request {
@@ -22,7 +25,9 @@ public class CreateDeveloper {
         @NotNull
         private DeveloperSkillType developerSkillType;
 
-        @NotNull @Min(0) @Max(20)
+        @NotNull
+        @Min(0)
+        @Max(20)
         private Integer experienceYear;
 
         @NotNull
@@ -37,13 +42,20 @@ public class CreateDeveloper {
         private Integer age;
     }
 
-    @Getter @Setter
-    @AllArgsConstructor @NoArgsConstructor
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
     @Builder
     public static class Response {
         private DeveloperLevel developerLevel;
         private DeveloperSkillType developerSkillType;
         private Integer experienceYear;
         private String memberId;
+
+        public static Response fromEntity(Developer developer) {
+            return new Response(developer.getDeveloperLevel(), developer.getDeveloperSkillType()
+                    , developer.getExperienceYear(), developer.getMemberId());
+        }
     }
 }

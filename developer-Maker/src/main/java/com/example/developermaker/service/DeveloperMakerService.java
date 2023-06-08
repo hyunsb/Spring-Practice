@@ -1,18 +1,20 @@
 package com.example.developermaker.service;
 
 import com.example.developermaker.dto.CreateDeveloper;
+import com.example.developermaker.dto.DeveloperDetailDto;
+import com.example.developermaker.dto.DeveloperDto;
 import com.example.developermaker.entity.Developer;
 import com.example.developermaker.exception.DeveloperMakerException;
 import com.example.developermaker.repository.DeveloperRepository;
 import com.example.developermaker.type.DeveloperLevel;
-import com.example.developermaker.type.DeveloperSkillType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import static com.example.developermaker.exception.DeveloperMakerErrorCode.DUPLICATED_MEMBER_ID;
-import static com.example.developermaker.exception.DeveloperMakerErrorCode.LEVEL_EXPERIENCE_YEARS_NOT_MATCHED;
+import static com.example.developermaker.exception.DeveloperMakerErrorCode.*;
 
 @Service
 @RequiredArgsConstructor
@@ -21,19 +23,21 @@ public class DeveloperMakerService {
     private final DeveloperRepository developerRepository;
 
     @Transactional
-    public Developer createDeveloper(CreateDeveloper.Request request) {
+    public CreateDeveloper.Response createDeveloper(CreateDeveloper.Request request) {
 
         validateCreateDeveloperRequest(request);
 
         Developer developer = Developer.builder()
-                .developerLevel(DeveloperLevel.JUNIOR)
-                .developerSkillType(DeveloperSkillType.FRONT_END)
-                .experienceYear(2)
-                .name("Olaf")
-                .age(5)
+                .developerLevel(request.getDeveloperLevel())
+                .developerSkillType(request.getDeveloperSkillType())
+                .experienceYear(request.getExperienceYear())
+                .memberId(request.getMemberId())
+                .name(request.getName())
+                .age(request.getAge())
                 .build();
 
-        return developerRepository.save(developer);
+        Developer result = developerRepository.save(developer);
+        return CreateDeveloper.Response.fromEntity(result);
     }
 
     private void validateCreateDeveloperRequest(CreateDeveloper.Request request) {
@@ -53,5 +57,18 @@ public class DeveloperMakerService {
         developerRepository.findByMemberId(request.getMemberId()).ifPresent(developer -> {
             throw new DeveloperMakerException(DUPLICATED_MEMBER_ID);
         });
+    }
+
+    public List<DeveloperDto> getAllDevelopers() {
+        List<Developer> allDeveloper = developerRepository.findAll();
+        return allDeveloper.stream()
+                .map(DeveloperDto::fromEntity)
+                .collect(Collectors.toList());
+    }
+
+    public DeveloperDetailDto getDeveloperDetail(String memberId) {
+        return developerRepository.findByMemberId(memberId)
+                .map(DeveloperDetailDto::fromEntity)
+                .orElseThrow(() -> new DeveloperMakerException(NO_DEVELOPER));
     }
 }
