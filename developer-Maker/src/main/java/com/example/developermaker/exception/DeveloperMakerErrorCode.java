@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum DevoperMakerErrorCode {
+public enum DeveloperMakerErrorCode {
 
     NO_DEVELOPER("해당되는 개발자가 없습니다."),
     DUPLICATED_MEMBER_ID("MemberId가 중복되는 개발자가 존재합니다."),
