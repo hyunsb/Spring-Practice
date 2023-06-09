@@ -1,14 +1,14 @@
 package com.example.developermaker.controller;
 
-import com.example.developermaker.dto.*;
-import com.example.developermaker.exception.DeveloperMakerException;
+import com.example.developermaker.dto.CreateDeveloper;
+import com.example.developermaker.dto.DeveloperDetailDto;
+import com.example.developermaker.dto.DeveloperDto;
+import com.example.developermaker.dto.EditDeveloper;
 import com.example.developermaker.service.DeveloperMakerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -47,15 +47,7 @@ public class DeveloperMakerController {
     }
 
     @DeleteMapping("/developer/{memberId}")
-    public DeveloperDetailDto deleteDeveloper(@PathVariable String memberId){
+    public DeveloperDetailDto deleteDeveloper(@PathVariable String memberId) {
         return developerMakerService.deleteDeveloper(memberId);
-    }
-
-    @ResponseStatus(value = HttpStatus.CONFLICT)
-    @ExceptionHandler(DeveloperMakerException.class)
-    public DeveloperMakerErrorResponse handleException(DeveloperMakerException exception, HttpServletRequest request) {
-        log.error("errorCode: {}, url: {}, message: {}"
-                , exception.getErrorCode(), request.getRequestURI(), exception.getDetailMessage());
-        return new DeveloperMakerErrorResponse(exception.getErrorCode(), exception.getDetailMessage());
     }
 }
