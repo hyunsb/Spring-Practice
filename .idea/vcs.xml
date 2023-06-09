@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/java-jdbc-dao-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dmaker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fast-campus/Bank-MyBatis-Start" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fast-campus/Reflection-Make-Spring" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/fast-campus/java-jdbc-dao-service" vcs="Git" />
   </component>
 </project>

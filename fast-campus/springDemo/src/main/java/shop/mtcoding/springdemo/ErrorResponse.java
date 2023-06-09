@@ -1,11 +1,14 @@
 package shop.mtcoding.springdemo;
 
-public class ErrorObject {
+import lombok.Getter;
+
+@Getter
+public class ErrorResponse {
 
     boolean result;
     String message;
 
-    public ErrorObject(String message) {
+    public ErrorResponse(String message) {
         this.result = false;
         this.message = message;
     }
