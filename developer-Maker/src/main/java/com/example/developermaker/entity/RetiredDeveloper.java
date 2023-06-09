@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-public class Developer {
+public class RetiredDeveloper {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,9 +30,6 @@ public class Developer {
     @Enumerated(EnumType.STRING)
     private DeveloperSkillType developerSkillType;
 
-    @Enumerated(EnumType.STRING)
-    private StatusCode statusCode;
-
     private Integer experienceYear;
 
     private String memberId;
@@ -40,6 +37,9 @@ public class Developer {
     private String name;
 
     private Integer age;
+
+    @Enumerated(EnumType.STRING)
+    private StatusCode statusCode;
 
     @CreatedDate
     private LocalDateTime createdAt;

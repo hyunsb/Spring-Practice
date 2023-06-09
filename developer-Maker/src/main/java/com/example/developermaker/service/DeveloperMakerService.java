@@ -5,9 +5,12 @@ import com.example.developermaker.dto.DeveloperDetailDto;
 import com.example.developermaker.dto.DeveloperDto;
 import com.example.developermaker.dto.EditDeveloper;
 import com.example.developermaker.entity.Developer;
+import com.example.developermaker.entity.RetiredDeveloper;
 import com.example.developermaker.exception.DeveloperMakerException;
 import com.example.developermaker.repository.DeveloperRepository;
+import com.example.developermaker.repository.RetiredDeveloperRepository;
 import com.example.developermaker.type.DeveloperLevel;
+import com.example.developermaker.type.StatusCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +25,21 @@ import static com.example.developermaker.exception.DeveloperMakerErrorCode.*;
 public class DeveloperMakerService {
 
     private final DeveloperRepository developerRepository;
+    private final RetiredDeveloperRepository retiredDeveloperRepository;
 
     @Transactional
     public CreateDeveloper.Response createDeveloper(CreateDeveloper.Request request) {
 
         validateCreateDeveloperRequest(request);
 
-        Developer developer = Developer.builder().developerLevel(request.getDeveloperLevel()).developerSkillType(request.getDeveloperSkillType()).experienceYear(request.getExperienceYear()).memberId(request.getMemberId()).name(request.getName()).age(request.getAge()).build();
+        Developer developer = Developer.builder()
+                .developerLevel(request.getDeveloperLevel())
+                .developerSkillType(request.getDeveloperSkillType())
+                .experienceYear(request.getExperienceYear())
+                .statusCode(StatusCode.EMPLOYED)
+                .memberId(request.getMemberId())
+                .name(request.getName())
+                .age(request.getAge()).build();
 
         Developer result = developerRepository.save(developer);
         return CreateDeveloper.Response.fromEntity(result);
@@ -43,9 +54,11 @@ public class DeveloperMakerService {
                 });
     }
 
-    public List<DeveloperDto> getAllDevelopers() {
-        List<Developer> allDeveloper = developerRepository.findAll();
-        return allDeveloper.stream().map(DeveloperDto::fromEntity).collect(Collectors.toList());
+    public List<DeveloperDto> getAllEmployedDevelopers() {
+        return developerRepository.findDevelopersByStatusCodeEquals(StatusCode.EMPLOYED)
+                .stream()
+                .map(DeveloperDto::fromEntity)
+                .collect(Collectors.toList());
     }
 
     public DeveloperDetailDto getDeveloperDetail(String memberId) {
@@ -77,5 +90,22 @@ public class DeveloperMakerService {
 
         if (developerLevel == DeveloperLevel.JUNIOR && (experienceYear > 4))
             throw new DeveloperMakerException(LEVEL_EXPERIENCE_YEARS_NOT_MATCHED);
+    }
+
+    @Transactional
+    public DeveloperDetailDto deleteDeveloper(String memberId) {
+        Developer developer = developerRepository.findByMemberId(memberId)
+                .orElseThrow(() -> new DeveloperMakerException(DUPLICATED_MEMBER_ID));
+
+        developer.setStatusCode(StatusCode.RETIRED);
+        developerRepository.delete(developer);
+
+        RetiredDeveloper retiredDeveloper = RetiredDeveloper.builder()
+                .memberId(memberId)
+                .name(developer.getName())
+                .build();
+
+        retiredDeveloperRepository.save(retiredDeveloper);
+        return DeveloperDetailDto.fromEntity(developer);
     }
 }
