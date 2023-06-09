@@ -1,5 +1,8 @@
 package com.example.developermaker.exception;
 
+import lombok.Getter;
+
+@Getter
 public class DeveloperMakerException extends RuntimeException {
 
     private final DeveloperMakerErrorCode errorCode;
