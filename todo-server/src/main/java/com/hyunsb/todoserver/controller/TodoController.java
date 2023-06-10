@@ -53,8 +53,7 @@ public class TodoController {
 
     @PatchMapping("/update")
     public ResponseEntity<TodoResponse> update() {
-        System.out.println("update()");
-        return null;
+        return todoService.update();
     }
 
     @DeleteMapping("/delete/{id}")
