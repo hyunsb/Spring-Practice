@@ -52,8 +52,9 @@ public class TodoController {
     }
 
     @PatchMapping("/update")
-    public ResponseEntity<TodoResponse> update() {
-        return todoService.update();
+    public ResponseEntity<TodoResponse> update(@RequestBody Long id, @RequestBody TodoRequest todoRequest) {
+        TodoEntity todoEntity = todoService.update(id, todoRequest);
+        return ResponseEntity.ok(new TodoResponse(todoEntity));
     }
 
     @DeleteMapping("/delete/{id}")
