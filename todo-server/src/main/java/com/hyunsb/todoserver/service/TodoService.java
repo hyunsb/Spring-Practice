@@ -3,7 +3,7 @@ package com.hyunsb.todoserver.service;
 import com.hyunsb.todoserver.model.TodoEntity;
 import com.hyunsb.todoserver.model.TodoRequest;
 import com.hyunsb.todoserver.repository.TodoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,14 +12,10 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class TodoService {
 
     private final TodoRepository todoRepository;
-
-    @Autowired
-    TodoService(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
 
     public TodoEntity add(TodoRequest request) {
         TodoEntity entity = new TodoEntity(request);
@@ -49,5 +45,9 @@ public class TodoService {
 
     public void deleteById(Long id) {
         todoRepository.deleteById(id);
+    }
+
+    public void deleteAll() {
+        todoRepository.deleteAll();
     }
 }

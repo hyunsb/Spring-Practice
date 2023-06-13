@@ -60,6 +60,12 @@ public class TodoController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteOne(@PathVariable Long id) {
         todoService.deleteById(id);
-        return ResponseEntity.ok("삭제완료");
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<?> deleteAll() {
+        todoService.deleteAll();
+        return ResponseEntity.ok().build();
     }
 }
