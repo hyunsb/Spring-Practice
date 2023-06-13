@@ -1,6 +1,7 @@
 package com.hyunsb.todoserver.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class TodoEntity {
 
     public TodoEntity(TodoRequest request) {

@@ -22,8 +22,9 @@ public class TodoService {
         return todoRepository.save(entity);
     }
 
-    public Optional<TodoEntity> searchById(Long id) {
-        return todoRepository.findById(id);
+    public TodoEntity searchById(Long id) {
+        Optional<TodoEntity> result = todoRepository.findById(id);
+        return result.orElseThrow(() -> new IllegalArgumentException("아이디에 해당하는 회원 정보가 존재하지 않습니다."));
     }
 
     @Transactional

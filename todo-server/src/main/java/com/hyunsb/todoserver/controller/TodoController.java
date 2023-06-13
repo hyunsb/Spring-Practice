@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -35,12 +34,8 @@ public class TodoController {
     @GetMapping("/readOne/{id}")
     public ResponseEntity<TodoResponse> readOne(@PathVariable Long id) {
         System.out.println("readOne");
-        Optional<TodoEntity> todoEntity = todoService.searchById(id);
-
-        if (todoEntity.isPresent())
-            return ResponseEntity.badRequest().build();
-
-        return ResponseEntity.ok(new TodoResponse(todoEntity.get()));
+        TodoEntity entity = todoService.searchById(id);
+        return ResponseEntity.ok(new TodoResponse(entity));
     }
 
     @GetMapping("/readAll")
