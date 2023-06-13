@@ -58,14 +58,8 @@ public class TodoController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteOne() {
-        System.out.println("deleteOne()");
-        return null;
-    }
-
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> deleteAll() {
-        System.out.println("deleteAll()");
-        return null;
+    public ResponseEntity<?> deleteOne(@PathVariable Long id) {
+        todoService.deleteById(id);
+        return ResponseEntity.ok("삭제완료");
     }
 }

@@ -5,6 +5,7 @@ import com.hyunsb.todoserver.model.TodoRequest;
 import com.hyunsb.todoserver.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +30,7 @@ public class TodoService {
         return todoRepository.findById(id);
     }
 
+    @Transactional
     public TodoEntity update(Long id, TodoRequest request) {
         TodoEntity entity = todoRepository.findById(id).orElseThrow(() -> {
             throw new IllegalArgumentException("아이디에 해당하는 데이터가 존재하지 않습니다.");
