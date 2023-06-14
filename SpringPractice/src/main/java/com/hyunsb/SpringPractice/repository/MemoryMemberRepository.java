@@ -11,6 +11,12 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Member save(Member member) {
+        if (Objects.isNull(member.getName()))
+            throw new IllegalArgumentException("name empty error");
+
+        if (!Objects.equals(Optional.empty(), findByName(member.getName())))
+            throw new IllegalArgumentException("name duplicate error");
+
         member.setId(++sequence);
         store.put(member.getId(), member);
         return member;
@@ -32,5 +38,10 @@ public class MemoryMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
+    }
+
+    @Override
+    public void deleteAll() {
+        store.clear();
     }
 }
