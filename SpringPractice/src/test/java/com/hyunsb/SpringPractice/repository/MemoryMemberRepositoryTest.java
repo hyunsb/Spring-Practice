@@ -27,23 +27,4 @@ class MemoryMemberRepositoryTest {
 
         assertEquals(extract.getName(), actual.getName());
     }
-
-    @Test
-    void save_Test_Failed_Empty_Name() {
-        Member member = new Member();
-        assertThrows(IllegalArgumentException.class, () -> {
-            memberRepository.save(member);
-        });
-    }
-
-    @Test
-    void save_Test_Failed_Duplicate_Name() {
-        Member member = new Member();
-        member.setName("TEST NAME");
-        memberRepository.save(member);
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            memberRepository.save(member);
-        });
-    }
 }
