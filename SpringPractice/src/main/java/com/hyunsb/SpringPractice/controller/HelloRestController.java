@@ -1,8 +1,8 @@
 package com.hyunsb.SpringPractice.controller;
 
+import com.hyunsb.SpringPractice.dto.HelloResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +17,10 @@ public class HelloRestController {
         return ResponseEntity.ok("hello Rest!");
     }
 
+    // Object를 반환하면 json으로 파싱됨
     @GetMapping("helloRest-mvc")
-    public ResponseEntity<?> helloMvc(@RequestParam("name") String name) {
+    public ResponseEntity<HelloResponseDto> helloMvc(@RequestParam("name") String name) {
         log.info("helloRest-Mvc");
-        return ResponseEntity.ok("안녕하세요, " + name + " 님");
+        return ResponseEntity.ok(new HelloResponseDto(name));
     }
 }
