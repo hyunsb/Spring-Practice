@@ -10,6 +10,7 @@ import com.example.developermaker.exception.DeveloperMakerException;
 import com.example.developermaker.repository.DeveloperRepository;
 import com.example.developermaker.repository.RetiredDeveloperRepository;
 import com.example.developermaker.type.DeveloperLevel;
+import com.example.developermaker.type.DeveloperSkillType;
 import com.example.developermaker.type.StatusCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -41,7 +42,11 @@ public class DeveloperMakerService {
                 .name(request.getName())
                 .age(request.getAge()).build();
 
+        System.out.println(developer);
+
         Developer result = developerRepository.save(developer);
+
+        System.out.println(result);
         return CreateDeveloper.Response.fromEntity(result);
     }
 

@@ -4,6 +4,7 @@ import com.hyunsb.todoserver.model.TodoEntity;
 import com.hyunsb.todoserver.model.TodoRequest;
 import com.hyunsb.todoserver.model.TodoResponse;
 import com.hyunsb.todoserver.service.TodoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.Objects;
 
 @RestController
 @CrossOrigin
+@Slf4j
 public class TodoController {
 
     private final TodoService todoService;
@@ -22,7 +24,7 @@ public class TodoController {
 
     @PostMapping("/")
     public ResponseEntity<TodoResponse> create(@RequestBody TodoRequest request) {
-        System.out.println("create");
+        log.info("create");
 
         if (Objects.isNull(request.getTitle()))
             return ResponseEntity.badRequest().build();
@@ -33,14 +35,14 @@ public class TodoController {
 
     @GetMapping("/readOne/{id}")
     public ResponseEntity<TodoResponse> readOne(@PathVariable Long id) {
-        System.out.println("readOne");
+        log.info("readOne");
         TodoEntity entity = todoService.searchById(id);
         return ResponseEntity.ok(new TodoResponse(entity));
     }
 
     @GetMapping("/readAll")
     public ResponseEntity<List<TodoResponse>> readAll() {
-        System.out.println("readAll()");
+        log.info("readAll()");
         List<TodoEntity> todoEntities = todoService.searchAll();
         List<TodoResponse> list = todoEntities.stream().map(TodoResponse::new).toList();
         return ResponseEntity.ok(list);

@@ -54,8 +54,11 @@ public class CreateDeveloper {
         private String memberId;
 
         public static Response fromEntity(Developer developer) {
-            return new Response(developer.getDeveloperLevel(), developer.getDeveloperSkillType()
-                    , developer.getExperienceYear(), developer.getMemberId());
+            return new Response(
+                    developer.getDeveloperLevel(),
+                    developer.getDeveloperSkillType(),
+                    developer.getExperienceYear(),
+                    developer.getMemberId());
         }
     }
 }
