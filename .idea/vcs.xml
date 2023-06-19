@@ -6,5 +6,6 @@
     <mapping directory="$PROJECT_DIR$/fast-campus/Bank-MyBatis-Start" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fast-campus/Reflection-Make-Spring" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fast-campus/java-jdbc-dao-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring-practice-FastCampus" vcs="Git" />
   </component>
 </project>
