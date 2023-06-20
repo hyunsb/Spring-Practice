@@ -1,6 +1,6 @@
 package com.hyunsb.springbootprac.service;
 
-import org.example.logic.JavaSort;
+import com.hyunsb.springbootprac.logic.JavaSort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class SortServiceTest {
 
     @BeforeEach
     void setUp() {
-        sut = new SortService(new JavaSort<String>());
+        sut = new SortService(new JavaSort<>());
     }
 
     @Test
